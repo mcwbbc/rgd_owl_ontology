@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.purl.org/RGD/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.purl.org/RGD/core">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Location">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the cytogenetic or genomic location of a MappableObject</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Qtl">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MappableObject"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Marker"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Gene"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A QTL object in RGD; a genomic segment which has been demonstrated to have a statistically significant linkage to a specific measurable phenotypic trait and in which there is presumed to be one or more genes or genomic elements that contribute to the control of that trait, along with a complex array of other genomic elements.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="OntologyAnnotation"/>
+  <owl:Class rdf:about="#Gene">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Marker"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Qtl"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MappableObject"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A gene object in RGD; a genomic segment which has been shown or predicted to be able to produce an RNA through the process of transcription.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Strain">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >an RGD Strain object; a group of rats which share a genetic background, for example an inbred strain is a lineage of rats which have been rendered essentially genetically identical to each other and distinct from other strains by 20 or more generations of brother-sister matings.  Other strains have been produced by genetic and/or genomic manipulations such as introduction of an exogenous gene or chromosomal segment, or mutation of one or more loci.  Some strains are outbred, meaning individuals of those strains are by definition not genetically identical.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="RgdObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Est">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An expressed sequence tag; a short sub-sequence of a transcribed nucleotide sequence which may or may not be polymorphic between strains or individuals.  When polymorphic, it can be used to track the parental source of the surrounding DNA segment through successive generations.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Snp"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Marker"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MappableObject">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#RgdObject"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Any RgdObject to which a Location (genomic, genetic or cytogenetic) can be attached</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#RgdObject">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Any object with an RGD ID--specifically genes, strains, QTLs and Markers.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Sslp">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Snp"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Marker"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A simple sequence length polymorphism; a short segment of DNA which contains a variable number of repeated 2-5 nucleotide sequences.  The number of times the sequence is repeated depends on the strain or individual allowing these polymorphisms to be used to track the parental source of the surrounding DNA segment through successive generations.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Marker">
+    <rdfs:subClassOf rdf:resource="#MappableObject"/>
+    <owl:disjointWith rdf:resource="#Qtl"/>
+    <owl:disjointWith rdf:resource="#Gene"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An RGD marker object;  a small DNA segment or individual nucleotide which has been shown to be polymorphic between different rat strains or between different individuals and which can be used to "follow" the parental (or ancestral) source of a particular DNA region through successive generations.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Snp">
+    <owl:disjointWith rdf:resource="#Est"/>
+    <owl:disjointWith rdf:resource="#Sslp"/>
+    <rdfs:subClassOf rdf:resource="#Marker"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A single nucleotide polymorphism;  a natrually occurring difference in a single nucleotide at a particular genomic position.  The value of the nucleotide is dependent on the strain or individual allowing these polymorphisms to be used to follow the parental source of the surrounding DNA segment through successive generations</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="isStrainFor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Which QTL(s) this strain was used to determine.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Strain"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasStrain"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Qtl"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLocation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasLocation describes the location of the mappable object;  it joins a MappableObject to a Location.</rdfs:comment>
+    <rdfs:range rdf:resource="#Location"/>
+    <rdfs:domain rdf:resource="#MappableObject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMarker">
+    <rdfs:domain rdf:resource="#Qtl"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isMarkerFor"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Marker"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Associates a QTL with one or more markers.  A QTL can have up to three markers--two flanking markers and/or a peak marker.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isCandidateGeneFor">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasCandidateGene"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Qtl"/>
+    <rdfs:domain rdf:resource="#Gene"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >links a gene which is a candidate gene for a QTL to that QTL; inverse of property "hasCandidateGene"</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMarkerFor">
+    <owl:inverseOf rdf:resource="#hasMarker"/>
+    <rdfs:domain rdf:resource="#Marker"/>
+    <rdfs:range rdf:resource="#Qtl"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inverse of hasMarker--defines which QTL(s) this marker is associated with.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasStrain">
+    <owl:inverseOf rdf:resource="#isStrainFor"/>
+    <rdfs:domain rdf:resource="#Qtl"/>
+    <rdfs:range rdf:resource="#Strain"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is one of the strains that was used to determine association between a phenotypic trait and a region of the chromosome.  Each rat QTL will have two associated strains which were crossed and the progeny genotyped and phenotyped to determine the location of the QTL.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOntologyAnnotation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >links an annotation to the annotated object</rdfs:comment>
+    <rdfs:domain rdf:resource="#RgdObject"/>
+    <rdfs:range rdf:resource="#OntologyAnnotation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPeakMarker">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is the marker which defines the peak of the QTL graph.  Not all QTLs will have a peak marker defined.</rdfs:comment>
+    <rdfs:range rdf:resource="#Marker"/>
+    <rdfs:subPropertyOf rdf:resource="#hasMarker"/>
+    <rdfs:domain rdf:resource="#Qtl"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasCandidateGene">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >links a QTL to a specified candidate gene for that QTL;  inverse of property "isCandidateGeneFor"</rdfs:comment>
+    <rdfs:domain rdf:resource="#Qtl"/>
+    <rdfs:range rdf:resource="#Gene"/>
+    <owl:inverseOf rdf:resource="#isCandidateGeneFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFlankingMarkerUp">
+    <rdfs:subPropertyOf rdf:resource="#hasMarker"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is the upstream marker which defines the 5' end of the QTL.  RGD calls this "Flank 1".  Not all QTLs will have an upstream marker defined.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFlankingMarkerDwn">
+    <rdfs:subPropertyOf rdf:resource="#hasMarker"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is the downstream marker which defines the 3' end of the QTL.  RGD calls this "Flank 2".  Not all QTLs will have an downstream marker defined.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="hasTerm">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#OntologyAnnotation"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCytogeneticBand">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Location"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasOntologyId">
+    <rdfs:domain rdf:resource="#OntologyAnnotation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasChromosome">
+    <rdfs:domain rdf:resource="#Location"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasGenomeAssembly">
+    <rdfs:domain rdf:resource="#Location"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSymbol">
+    <rdfs:domain rdf:resource="#RgdObject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasAbsPosition">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#Location"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasQualifier">
+    <rdfs:domain rdf:resource="#OntologyAnnotation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasChrStrand">
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >+</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasChrStop">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#Location"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasPValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#Qtl"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasEvidenceCode">
+    <rdfs:domain rdf:resource="#OntologyAnnotation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasLodScore">
+    <rdfs:domain rdf:resource="#Qtl"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasChrStart">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#Location"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasName">
+    <rdfs:domain rdf:resource="#RgdObject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="hasRgdId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Unique identifier for data in the RGD database</rdfs:comment>
+    <rdfs:domain rdf:resource="#RgdObject"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->
