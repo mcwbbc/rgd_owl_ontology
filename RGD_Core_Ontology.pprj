@@ -1,4 +1,4 @@
-; Thu Nov 11 14:51:16 CST 2010
+; Thu Nov 11 14:55:47 CST 2010
 ; 
 ;+ (version "3.4.1")
 ;+ (build "Build 537")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[RGD_Core_Ontology_ProjectKB_Class1085]
-		[RGD_Core_Ontology_ProjectKB_Class1086]
-		[RGD_Core_Ontology_ProjectKB_Class1087]
-		[RGD_Core_Ontology_ProjectKB_Class1088]
-		[RGD_Core_Ontology_ProjectKB_Class1089]))
+		[RGD_Core_Ontology_ProjectKB_Class1095]
+		[RGD_Core_Ontology_ProjectKB_Class1096]
+		[RGD_Core_Ontology_ProjectKB_Class1097]
+		[RGD_Core_Ontology_ProjectKB_Class1098]
+		[RGD_Core_Ontology_ProjectKB_Class1099]))
 
 ([CLSES_TAB] of  Widget
 
@@ -7904,27 +7904,27 @@
 	(integer_value 536)
 	(name "owl_build"))
 
-([RGD_Core_Ontology_ProjectKB_Class1085] of  String
+([RGD_Core_Ontology_ProjectKB_Class1095] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Class")
 	(string_value "%3ANAME"))
 
-([RGD_Core_Ontology_ProjectKB_Class1086] of  String
+([RGD_Core_Ontology_ProjectKB_Class1096] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([RGD_Core_Ontology_ProjectKB_Class1087] of  String
+([RGD_Core_Ontology_ProjectKB_Class1097] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([RGD_Core_Ontology_ProjectKB_Class1088] of  String
+([RGD_Core_Ontology_ProjectKB_Class1098] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([RGD_Core_Ontology_ProjectKB_Class1089] of  String
+([RGD_Core_Ontology_ProjectKB_Class1099] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Thing")
 	(string_value "%3ANAME"))

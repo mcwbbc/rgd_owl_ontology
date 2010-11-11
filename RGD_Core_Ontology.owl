@@ -14,6 +14,8 @@
   <owl:Class rdf:ID="Location">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >This class describes the cytogenetic or genomic location of a MappableObject</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Location</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="Qtl">
     <rdfs:subClassOf>
@@ -30,7 +32,10 @@
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >QTL</rdfs:label>
   </owl:Class>
-  <owl:Class rdf:ID="OntologyAnnotation"/>
+  <owl:Class rdf:ID="OntologyAnnotation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontology Annotation</rdfs:label>
+  </owl:Class>
   <owl:Class rdf:about="#Gene">
     <owl:disjointWith rdf:resource="#Qtl"/>
     <owl:disjointWith>
@@ -47,6 +52,8 @@
   <owl:Class rdf:ID="Strain">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >an RGD Strain object; a group of rats which share a genetic background, for example an inbred strain is a lineage of rats which have been rendered essentially genetically identical to each other and distinct from other strains by 20 or more generations of brother-sister matings.  Other strains have been produced by genetic and/or genomic manipulations such as introduction of an exogenous gene or chromosomal segment, or mutation of one or more loci.  Some strains are outbred, meaning individuals of those strains are by definition not genetically identical.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Strain</rdfs:label>
     <rdfs:subClassOf>
       <owl:Class rdf:ID="RgdObject"/>
     </rdfs:subClassOf>
@@ -69,8 +76,12 @@
     </rdfs:subClassOf>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Any RgdObject to which a Location (genomic, genetic or cytogenetic) can be attached</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mappable Object</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="#RgdObject">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RGD Object</rdfs:label>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Any object with an RGD ID--specifically genes, strains, QTLs and Markers.</rdfs:comment>
   </owl:Class>
