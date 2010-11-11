@@ -20,25 +20,29 @@
       <owl:Class rdf:ID="MappableObject"/>
     </rdfs:subClassOf>
     <owl:disjointWith>
-      <owl:Class rdf:ID="Marker"/>
+      <owl:Class rdf:ID="Gene"/>
     </owl:disjointWith>
     <owl:disjointWith>
-      <owl:Class rdf:ID="Gene"/>
+      <owl:Class rdf:ID="Marker"/>
     </owl:disjointWith>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >A QTL object in RGD; a genomic segment which has been demonstrated to have a statistically significant linkage to a specific measurable phenotypic trait and in which there is presumed to be one or more genes or genomic elements that contribute to the control of that trait, along with a complex array of other genomic elements.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >QTL</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="OntologyAnnotation"/>
   <owl:Class rdf:about="#Gene">
+    <owl:disjointWith rdf:resource="#Qtl"/>
     <owl:disjointWith>
       <owl:Class rdf:about="#Marker"/>
     </owl:disjointWith>
-    <owl:disjointWith rdf:resource="#Qtl"/>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#MappableObject"/>
     </rdfs:subClassOf>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >A gene object in RGD; a genomic segment which has been shown or predicted to be able to produce an RNA through the process of transcription.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gene</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="Strain">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -50,6 +54,8 @@
   <owl:Class rdf:ID="Est">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >An expressed sequence tag; a short sub-sequence of a transcribed nucleotide sequence which may or may not be polymorphic between strains or individuals.  When polymorphic, it can be used to track the parental source of the surrounding DNA segment through successive generations.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EST</rdfs:label>
     <owl:disjointWith>
       <owl:Class rdf:ID="Snp"/>
     </owl:disjointWith>
@@ -77,17 +83,23 @@
     </rdfs:subClassOf>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >A simple sequence length polymorphism; a short segment of DNA which contains a variable number of repeated 2-5 nucleotide sequences.  The number of times the sequence is repeated depends on the strain or individual allowing these polymorphisms to be used to track the parental source of the surrounding DNA segment through successive generations.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SSLP</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="#Marker">
     <rdfs:subClassOf rdf:resource="#MappableObject"/>
-    <owl:disjointWith rdf:resource="#Qtl"/>
     <owl:disjointWith rdf:resource="#Gene"/>
+    <owl:disjointWith rdf:resource="#Qtl"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Marker</rdfs:label>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >An RGD marker object;  a small DNA segment or individual nucleotide which has been shown to be polymorphic between different rat strains or between different individuals and which can be used to "follow" the parental (or ancestral) source of a particular DNA region through successive generations.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#Snp">
-    <owl:disjointWith rdf:resource="#Est"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SNP</rdfs:label>
     <owl:disjointWith rdf:resource="#Sslp"/>
+    <owl:disjointWith rdf:resource="#Est"/>
     <rdfs:subClassOf rdf:resource="#Marker"/>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >A single nucleotide polymorphism;  a natrually occurring difference in a single nucleotide at a particular genomic position.  The value of the nucleotide is dependent on the strain or individual allowing these polymorphisms to be used to follow the parental source of the surrounding DNA segment through successive generations</rdfs:comment>
@@ -204,13 +216,13 @@
     <rdfs:range>
       <owl:DataRange>
         <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >+</rdf:first>
           <rdf:rest rdf:parseType="Resource">
             <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >-</rdf:first>
           </rdf:rest>
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >+</rdf:first>
         </owl:oneOf>
       </owl:DataRange>
     </rdfs:range>
@@ -231,6 +243,13 @@
     <rdfs:domain rdf:resource="#Qtl"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
   </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasRgdId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Unique identifier for data in the RGD database</rdfs:comment>
+    <rdfs:domain rdf:resource="#RgdObject"/>
+  </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="hasChrStart">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     <rdfs:domain rdf:resource="#Location"/>
@@ -239,13 +258,6 @@
     <rdfs:domain rdf:resource="#RgdObject"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
-  <owl:FunctionalProperty rdf:ID="hasRgdId">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Unique identifier for data in the RGD database</rdfs:comment>
-    <rdfs:domain rdf:resource="#RgdObject"/>
-  </owl:FunctionalProperty>
 </rdf:RDF>
 
-<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->
+<!-- Created with Protege (with OWL Plugin 3.4.1, Build 536)  http://protege.stanford.edu -->
