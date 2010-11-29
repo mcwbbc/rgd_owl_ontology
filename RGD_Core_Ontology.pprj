@@ -1,4 +1,4 @@
-; Thu Nov 18 15:04:18 CST 2010
+; Thu Nov 18 15:29:54 CST 2010
 ; 
 ;+ (version "3.4.1")
 ;+ (build "Build 537")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[RGD_Core_Ontology_ProjectKB_Class64]
-		[RGD_Core_Ontology_ProjectKB_Class65]
-		[RGD_Core_Ontology_ProjectKB_Class66]
-		[RGD_Core_Ontology_ProjectKB_Class67]
-		[RGD_Core_Ontology_ProjectKB_Class68]))
+		[RGD_Core_Ontology_ProjectKB_Class10060]
+		[RGD_Core_Ontology_ProjectKB_Class10061]
+		[RGD_Core_Ontology_ProjectKB_Class10062]
+		[RGD_Core_Ontology_ProjectKB_Class10063]
+		[RGD_Core_Ontology_ProjectKB_Class10064]))
 
 ([CLSES_TAB] of  Widget
 
@@ -284,55 +284,10 @@
 	(name "DisabledTest")
 	(properties [KB_307200_Instance_25]))
 
-([KB_307200_Instance_24] of  Boolean
-
-	(boolean_value TRUE)
-	(name "OWL-DL Tests"))
-
 ([KB_307200_Instance_25] of  Boolean
 
 	(boolean_value TRUE)
 	(name "edu.stanford.smi.protegex.owl.testing.owldl.NoTopLevelJunkOWLDLTest"))
-
-([KB_307200_Instance_26] of  Boolean
-
-	(boolean_value TRUE)
-	(name "edu.stanford.smi.protegex.owl.testing.owldl.NoSubclassesOfRDFClassesOWLDLTest"))
-
-([KB_307200_Instance_27] of  Boolean
-
-	(boolean_value TRUE)
-	(name "edu.stanford.smi.protegex.owl.testing.owldl.NoImportOfSystemOntologiesOWLDLTest"))
-
-([KB_307200_Instance_28] of  Boolean
-
-	(boolean_value TRUE)
-	(name "edu.stanford.smi.protegex.owl.testing.owldl.NoClassesOrPropertiesInEnumerationsOWLDLTest"))
-
-([KB_307200_Instance_29] of  Boolean
-
-	(boolean_value TRUE)
-	(name "edu.stanford.smi.protegex.owl.testing.owldl.NoPropertiesWithClassAsRangeOWLDLTest"))
-
-([KB_307200_Instance_30] of  Boolean
-
-	(boolean_value TRUE)
-	(name "edu.stanford.smi.protegex.owl.testing.owldl.NoMetaclassOWLDLTest"))
-
-([KB_307200_Instance_31] of  Boolean
-
-	(boolean_value TRUE)
-	(name "edu.stanford.smi.protegex.owl.testing.owldl.NoSuperOrSubPropertiesOfAnnotationPropertiesTest"))
-
-([KB_307200_Instance_32] of  Boolean
-
-	(boolean_value TRUE)
-	(name "edu.stanford.smi.protegex.owl.testing.owldl.TransitivePropertiesCannotBeFunctionalOWLDLTest"))
-
-([KB_307200_Instance_33] of  Boolean
-
-	(boolean_value TRUE)
-	(name "edu.stanford.smi.protegex.owl.testing.owldl.NoCardiRestrictionOnTransitivePropertiesOWLDLTest"))
 
 ([KB_313796_Instance_852] of  Widget
 
@@ -7186,9 +7141,6 @@
 	(property_list [KB_628369_Class933])
 	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
 
-([KB_736068_Class0] of  Map
-)
-
 ([KB_764103_Instance_545] of  Widget
 
 	(is_hidden FALSE)
@@ -7269,6 +7221,9 @@
 	(property_list [KB_628369_Class816])
 	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
 
+([KB_993273_Class0] of  Map
+)
+
 ([PAL_FORM_WIDGET] of  Widget
 
 	(height 476)
@@ -7285,9 +7240,9 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[KB_713803_Instance_477]
-		[PAL_FORM_WIDGET]
-		[KB_691299_Instance_398]
 		[KB_313796_Instance_852]
+		[KB_691299_Instance_398]
+		[PAL_FORM_WIDGET]
 		[Instance_581]
 		[KB_713803_Instance_693]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
@@ -7309,8 +7264,8 @@
 		[KB_938545_Instance_329]
 		[KB_764103_Instance_545]
 		[KB_301165_Instance_1013]
-		[Instance_443]
-		[KB_713803_Instance_390])
+		[KB_713803_Instance_390]
+		[Instance_443])
 	(default_cls_metaclass "http://www.w3.org/2002/07/owl#Class")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget")
@@ -7326,16 +7281,16 @@
 		"http://www.w3.org/2001/XMLSchema#anySimpleType"
 		"http://www.w3.org/2001/XMLSchema#NOTATION"
 		":MODIFIER"
-		"http://www.w3.org/2003/11/swrlb#addYearMonthDurationToDatetime"
-		"http://www.w3.org/2003/11/swrlb#subtractDayTimeDurations"
-		"http://protege.stanford.edu/plugins/owl/protege#SLOT-CONSTRAINTS"
 		"http://www.w3.org/2000/01/rdf-schema#Container"
-		"http://www.w3.org/2003/11/swrlb#subtractDates"
-		"http://www.w3.org/2001/XMLSchema#integer"
+		"http://protege.stanford.edu/plugins/owl/protege#SLOT-CONSTRAINTS"
+		"http://www.w3.org/2003/11/swrlb#subtractDayTimeDurations"
+		"http://www.w3.org/2003/11/swrlb#addYearMonthDurationToDatetime"
 		":SLOT-NUMERIC-MINIMUM"
+		"http://www.w3.org/2001/XMLSchema#integer"
+		"http://www.w3.org/2003/11/swrlb#subtractDates"
 		"http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"
-		":DIRECTED-BINARY-RELATION"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+		":DIRECTED-BINARY-RELATION"
 		"http://www.w3.org/2003/11/swrlb#substring"
 		":NUMERIC-MAXIMUM"
 		"http://www.w3.org/2003/11/swrl#propertyPredicate"
@@ -7363,19 +7318,19 @@
 		"http://www.w3.org/2002/07/owl#CardinalityRestriction"
 		"http://www.w3.org/2001/XMLSchema#boolean"
 		"http://www.w3.org/2002/07/owl#inverseOf"
-		"http://www.w3.org/2003/11/swrlb#round"
 		"http://protege.stanford.edu/plugins/owl/protege#inferredType"
+		"http://www.w3.org/2003/11/swrlb#round"
 		"http://www.w3.org/2002/07/owl#cardinality"
 		"http://www.w3.org/2001/XMLSchema#Name"
 		":ANNOTATION"
 		"http://www.w3.org/2002/07/owl#valuesFrom"
 		"http://www.w3.org/2003/11/swrl#body"
-		"http://www.w3.org/2003/11/swrlb#subtractYearMonthDurationFromDate"
 		":STANDARD-SLOT"
-		"http://www.w3.org/2001/XMLSchema#int"
+		"http://www.w3.org/2003/11/swrlb#subtractYearMonthDurationFromDate"
 		":OWL-ANONYMOUS-ROOT"
-		"http://www.w3.org/2003/11/swrlb#subtractYearMonthDurations"
+		"http://www.w3.org/2001/XMLSchema#int"
 		"http://www.w3.org/2003/11/swrlb#yearMonthDuration"
+		"http://www.w3.org/2003/11/swrlb#subtractYearMonthDurations"
 		"http://www.w3.org/2003/11/swrlb#substringBefore"
 		"http://www.w3.org/2003/11/swrlb#divideYearMonthDurations"
 		":MAXIMUM-CARDINALITY"
@@ -7386,31 +7341,31 @@
 		"http://www.w3.org/2002/07/owl#UnionClass"
 		":DIRECT-TYPE"
 		"http://www.w3.org/2001/XMLSchema#time"
-		"http://www.w3.org/2003/11/swrlb#subtractDatetimesYieldingYearMonthDuration"
-		"http://www.w3.org/2003/11/swrlb#subtract"
-		":NAME"
 		"http://www.w3.org/2002/07/owl#equivalentClass"
+		":NAME"
+		"http://www.w3.org/2003/11/swrlb#subtract"
+		"http://www.w3.org/2003/11/swrlb#subtractDatetimesYieldingYearMonthDuration"
 		"http://www.w3.org/2003/11/swrlb#multiplyDayTimeDurations"
 		"http://www.w3.org/2003/11/swrlb#divideDayTimeDuration"
 		"http://www.w3.org/2003/11/swrlb#subtractYearMonthDurationFromDatetime"
-		"http://protege.stanford.edu/plugins/owl/protege#OWL-ONTOLOGY-POINTER-PROPERTY"
 		"http://www.w3.org/2002/07/owl#FunctionalProperty"
+		"http://protege.stanford.edu/plugins/owl/protege#OWL-ONTOLOGY-POINTER-PROPERTY"
 		"http://protege.stanford.edu/plugins/owl/protege#OWL-ONTOLOGY-PREFIXES"
 		"http://protege.stanford.edu/plugins/owl/protege#inferredSubclassOf"
-		"http://www.w3.org/2003/11/swrlb#equal"
-		"http://www.w3.org/2003/11/swrl#SameIndividualAtom"
 		":PAL-DESCRIPTION"
-		"http://www.w3.org/2001/XMLSchema#anyURI"
-		"http://www.w3.org/2002/07/owl#MinCardinalityRestriction"
+		"http://www.w3.org/2003/11/swrl#SameIndividualAtom"
+		"http://www.w3.org/2003/11/swrlb#equal"
 		"http://www.w3.org/2002/07/owl#AnonymousClass"
+		"http://www.w3.org/2002/07/owl#MinCardinalityRestriction"
+		"http://www.w3.org/2001/XMLSchema#anyURI"
 		"http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
 		"http://www.w3.org/2003/11/swrlb#subtractDayTimeDurationFromDate"
-		"http://www.w3.org/2003/11/swrlb#contains"
 		":CLASS"
+		"http://www.w3.org/2003/11/swrlb#contains"
 		"http://www.w3.org/2002/07/owl#complementOf"
 		":ROLE"
-		"http://www.w3.org/2003/11/swrlb#addDayTimeDurationToTime"
 		"http://www.w3.org/2003/11/swrlb#translate"
+		"http://www.w3.org/2003/11/swrlb#addDayTimeDurationToTime"
 		"http://www.w3.org/2003/11/swrlb#dayTimeDuration"
 		"http://www.w3.org/2002/07/owl#TransitiveProperty"
 		"http://www.w3.org/2002/07/owl#IntersectionClass"
@@ -7439,8 +7394,8 @@
 		"http://protege.stanford.edu/plugins/owl/protege#FROM"
 		"http://www.w3.org/2001/XMLSchema#nonPositiveInteger"
 		"http://www.w3.org/2003/11/swrlb#time"
-		"http://www.w3.org/2002/07/owl#someValuesFrom"
 		"http://protege.stanford.edu/plugins/owl/protege#classificationStatus"
+		"http://www.w3.org/2002/07/owl#someValuesFrom"
 		"http://protege.stanford.edu/plugins/owl/protege#inferredSuperclassOf"
 		"http://www.w3.org/2003/11/swrlb#notEqual"
 		"http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
@@ -7509,16 +7464,16 @@
 		"http://www.w3.org/2001/XMLSchema#decimal"
 		"http://www.w3.org/2003/11/swrl#AtomList"
 		"http://www.w3.org/2000/01/rdf-schema#seeAlso"
+		"http://www.w3.org/2003/11/swrl#classPredicate"
 		"http://www.w3.org/2000/01/rdf-schema#Literal"
 		"http://www.w3.org/2002/07/owl#equivalentProperty"
-		"http://www.w3.org/2003/11/swrl#classPredicate"
-		"http://www.w3.org/2001/XMLSchema#long"
 		"http://www.w3.org/2002/07/owl#SomeValuesFromRestriction"
-		":SLOT-VALUE-TYPE"
+		"http://www.w3.org/2001/XMLSchema#long"
 		"http://www.w3.org/2002/07/owl#HasValueRestriction"
-		"http://www.w3.org/2003/11/swrlb#minArgs"
-		"http://www.w3.org/2001/XMLSchema#duration"
+		":SLOT-VALUE-TYPE"
 		"http://www.w3.org/2001/XMLSchema#positiveInteger"
+		"http://www.w3.org/2001/XMLSchema#duration"
+		"http://www.w3.org/2003/11/swrlb#minArgs"
 		"http://www.w3.org/2002/07/owl#oneOf"
 		":VALUES"
 		":ASSOCIATED-SLOT"
@@ -7526,8 +7481,8 @@
 		"http://www.w3.org/2001/XMLSchema#language"
 		"http://www.w3.org/2003/11/swrlb#stringLength"
 		"http://www.w3.org/2002/07/owl#versionInfo"
-		":CONSTRAINTS"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#first"
+		":CONSTRAINTS"
 		"http://www.w3.org/2001/XMLSchema#base64Binary"
 		"http://www.w3.org/2001/XMLSchema#short"
 		"http://www.w3.org/2003/11/swrlb#lessThan"
@@ -7541,26 +7496,26 @@
 		"http://www.w3.org/2002/07/owl#AllValuesFromRestriction"
 		"http://www.w3.org/2003/11/swrlb#matches"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
-		"http://www.w3.org/2001/XMLSchema#hexBinary"
 		"http://www.w3.org/2002/07/owl#DeprecatedClass"
+		"http://www.w3.org/2001/XMLSchema#hexBinary"
 		"http://www.w3.org/2002/07/owl#DatatypeProperty"
-		"http://www.w3.org/2001/XMLSchema#double"
 		"http://www.w3.org/2001/XMLSchema#unsignedByte"
+		"http://www.w3.org/2001/XMLSchema#double"
 		"http://www.w3.org/2002/07/owl#distinctMembers"
 		":SLOT-NUMERIC-MAXIMUM"
 		"http://www.w3.org/2003/11/swrlb#containsIgnoreCase"
 		":INSTANCE-ANNOTATION"
-		"http://www.w3.org/2003/11/swrlb#divide"
 		":SLOT-MINIMUM-CARDINALITY"
+		"http://www.w3.org/2003/11/swrlb#divide"
 		"http://www.w3.org/2002/07/owl#AnnotationProperty"
 		":DIRECT-SUBCLASSES"
-		"http://www.w3.org/2003/11/swrlb#replace"
 		"http://www.w3.org/2002/07/owl#DeprecatedProperty"
+		"http://www.w3.org/2003/11/swrlb#replace"
 		"http://www.w3.org/2003/11/swrlb#date"
 		"http://www.w3.org/2002/07/owl#ObjectProperty"
 		"http://www.w3.org/2003/11/swrlb#ceiling"
-		"http://www.w3.org/2003/11/swrlb#lessThanOrEqual"
 		"http://www.w3.org/2001/XMLSchema#ENTITY"
+		"http://www.w3.org/2003/11/swrlb#lessThanOrEqual"
 		"http://www.w3.org/2000/01/rdf-schema#comment"
 		"http://www.w3.org/2001/XMLSchema#byte"
 		"http://www.w3.org/2001/XMLSchema#float"
@@ -7574,8 +7529,8 @@
 		"http://www.w3.org/2000/01/rdf-schema#Datatype"
 		"http://www.w3.org/2003/11/swrlb#unaryPlus"
 		"http://www.w3.org/2003/11/swrlb#subtractDatetimesYieldingDayTimeDuration"
-		"http://www.w3.org/2001/XMLSchema#QName"
 		"http://www.w3.org/2003/11/swrl#Atom"
+		"http://www.w3.org/2001/XMLSchema#QName"
 		"http://www.w3.org/2002/07/owl#EnumeratedClass"
 		"http://www.w3.org/2003/11/swrlb#abs"
 		"http://www.w3.org/2003/11/swrlb#addDayTimeDurations"
@@ -7584,8 +7539,8 @@
 		"http://www.w3.org/2001/XMLSchema#unsignedLong"
 		":MINIMUM-CARDINALITY"
 		"http://www.w3.org/2003/11/swrlb#endsWith"
-		":TO"
 		":SLOT-DEFAULTS"
+		":TO"
 		"http://www.w3.org/2003/11/swrlb#startsWith"
 		":SYSTEM-CLASS"
 		":SLOT-MAXIMUM-CARDINALITY"
@@ -7598,8 +7553,8 @@
 		"http://www.w3.org/2003/11/swrlb#sin"
 		"http://www.w3.org/2003/11/swrlb#add"
 		"http://www.w3.org/2003/11/swrlb#addDayTimeDurationToDatetime"
-		"http://www.w3.org/2002/07/owl#intersectionOf"
 		":SLOT-VALUES"
+		"http://www.w3.org/2002/07/owl#intersectionOf"
 		"http://www.w3.org/2002/07/owl#Nothing"
 		"http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
 		"http://www.w3.org/2002/07/owl#hasValue")
@@ -7634,16 +7589,36 @@
 ([RGD_Core_Ontology_ProjectKB_Class10] of  Property_List
 )
 
+([RGD_Core_Ontology_ProjectKB_Class10060] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([RGD_Core_Ontology_ProjectKB_Class10061] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Class")
+	(string_value "%3ANAME"))
+
+([RGD_Core_Ontology_ProjectKB_Class10062] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([RGD_Core_Ontology_ProjectKB_Class10063] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([RGD_Core_Ontology_ProjectKB_Class10064] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Thing")
+	(string_value "%3ANAME"))
+
 ([RGD_Core_Ontology_ProjectKB_Class11] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [RGD_Core_Ontology_ProjectKB_Class12])
 	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
-
-([RGD_Core_Ontology_ProjectKB_Class11090] of  String
-
-	(name "owl_build")
-	(string_value "579"))
 
 ([RGD_Core_Ontology_ProjectKB_Class12] of  Property_List
 )
@@ -7881,31 +7856,6 @@
 
 ([RGD_Core_Ontology_ProjectKB_Class6] of  Property_List
 )
-
-([RGD_Core_Ontology_ProjectKB_Class64] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Class")
-	(string_value "%3ANAME"))
-
-([RGD_Core_Ontology_ProjectKB_Class65] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([RGD_Core_Ontology_ProjectKB_Class66] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([RGD_Core_Ontology_ProjectKB_Class67] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([RGD_Core_Ontology_ProjectKB_Class68] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Thing")
-	(string_value "%3ANAME"))
 
 ([RGD_Core_Ontology_ProjectKB_Class7] of  Widget
 
